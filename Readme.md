@@ -9,11 +9,11 @@ The frontend is build upon [Quasar framework v1.0.0-rc.4](https://quasar.dev/) w
 1. Node 
 2. [Quasar-Cli](https://quasar.dev/quasar-cli/installation)
 
-... You could install this command line tool using "npm install -g @quasar/cli"
+...You could install this command line tool using "npm install -g @quasar/cli"
 
 3. Docker
 
-... Using docker-compose to run the whole application. There is also a example .env included in the repository.
+...Using docker-compose to run the whole application. There is also a example .env included in the repository.
 
 To confirm all dependencies is satisfied, please check following command is runing correctly.
 
