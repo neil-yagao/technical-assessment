@@ -1,7 +1,7 @@
 # Propellerhead Technical Assessment
 
 This is the propellerhead Technical Assessment solution written by Neil Hu. 
-The project backend is written in Nodejs (testing in 10.7.0 ) and deployed using Docker. Database is using mysql 5.7 connecting via sequelizejs orm framework. Instead of using normal resultful api, this project is followed GraphQL query framework, so that the apollo-express has been included.
+The project backend is written in Nodejs (tested in 10.7.0 ) and deployed using Docker. Database is using mysql 5.7 connecting via sequelizejs orm framework. Instead of using normal resultful api, this project is followed GraphQL query framework, so that the apollo-express has been included.
 
 The frontend is build upon [Quasar framework v1.0.0-rc.4](https://quasar.dev/) with vuejs technical stack and apollo-client.
 
