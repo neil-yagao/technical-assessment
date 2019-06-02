@@ -1,0 +1,35 @@
+{
+  "name": "propellerhead_frontend",
+  "version": "0.0.1",
+  "description": "techinical assessment for propellerhead ",
+  "productName": "techinicalAssessment",
+  "cordovaId": "org.cordova.quasar.app",
+  "author": "Neil Hu <neil.hu68@yahoo.com>",
+  "private": true,
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.0.0",
+    "apollo-cache-inmemory": "^1.4.3",
+    "apollo-client": "^2.0.0",
+    "apollo-link-error": "^1.1.10",
+    "apollo-link-http": "^1.5.11",
+    "axios": "^0.18.0",
+    "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.2",
+    "lodash": "^4.17.10",
+    "quasar": "^1.0.0-beta.0"
+  },
+  "devDependencies": {
+    "@quasar/app": "^1.0.0-beta.0"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0",
+    "yarn": ">= 1.6.0"
+  },
+  "browserslist": [
+    "last 1 version, not dead, ie >= 11"
+  ]
+}
