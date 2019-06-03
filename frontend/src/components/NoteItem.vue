@@ -14,12 +14,20 @@
 				 label="Name"
 				 filled
 				 v-model="editingNote.name"
+				 counter
+				 maxlength="40"
+				 lazy-rules
+				 :rules="[          val => val !== null && val !== '' || 'Note\'s name is required',
+				  val => val !== null && val.length > 40 || 'Note\'s name is too long'   ]"
 				/>
 				<q-input
 				 type="textarea"
 				 class="q-mt-md"
 				 label="Content"
 				 filled
+				 counter
+				 lazy-rules
+				 :rules="[          val => val !== null && val !== '' || 'Note\'s content is required'        ]"
 				 v-model="editingNote.content"
 				/>
 			</q-card-section>
@@ -94,6 +102,9 @@ export default {
 			this.editable = false;
 		},
 		createNote() {
+			if (!this.validate()) {
+				return false;
+			}
 			this.$emit("new-note", this.editingNote);
 			this.unselectItem();
 		},
@@ -104,6 +115,9 @@ export default {
 			this.editingNote.content = this.note.content;
 		},
 		updateNote() {
+			if (!this.validate()) {
+				return false;
+			}
 			this.$emit("udpate-note", this.editingNote);
 			this.unselectItem();
 		},
@@ -111,15 +125,22 @@ export default {
 			this.selected = false;
 			this.editable = false;
 		},
-		deleteNote(){
-			this.$emit('delete-note',this.note);
+		deleteNote() {
+			this.$emit("delete-note", this.note);
 			this.unselectItem();
+		},
+		validate() {
+			return (
+				this.editingNote.name &&
+				this.editingNote.length <= 40 &&
+				this.editingNote.content
+			);
 		}
 	},
-	watch:{
-		selected(newVal){
-			if(!newVal){
-				this.$emit('unexpanded')
+	watch: {
+		selected(newVal) {
+			if (!newVal) {
+				this.$emit("unexpanded");
 			}
 		}
 	}

@@ -31,12 +31,16 @@
 					 filled
 					 class="col-md-4 col-xs-12"
 					 v-model="customerValue.title"
+					 lazy-rules
+					 :rules="[          val => val !== null && val !== '' || 'Title is required'        ]"
 					/>
 					<q-input
 					 label="Name"
 					 filled
 					 class="col-md-4 col-xs-12"
 					 v-model="customerValue.name"
+					 lazy-rules
+					 :rules="[          val => val !== null && val !== '' || 'Name is required'        ]"
 					/>
 					<q-select
 					 label="Status"
@@ -44,6 +48,7 @@
 					 class="col-md-4 col-xs-12"
 					 :options="['prospective', 'current' , 'non-active']"
 					 v-model="customerValue.status"
+					 :rules="[          val => val !== null && val !== '' || 'Status is required'        ]"
 					/>
 				</div>
 				<div class="row q-gutter-sm q-mt-md no-wrap q-pl-md">
@@ -106,12 +111,18 @@ export default {
 	},
 	methods: {
 		addNewCustomer() {
+			if (
+				!this.customerValue.title ||
+				!this.customerValue.name ||
+				!this.customerValue.status
+			) {
+				return;
+			}
 			this.$store.dispatch("addCustomer", this.customerValue).then(() => {
 				this.show = false;
 			});
 		},
 		showDetail(customer) {
-			console.log("customer", customer);
 			if (customer) {
 				this.customerValue = Object.assign(
 					{},
