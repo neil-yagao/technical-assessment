@@ -17,7 +17,7 @@
     "apollo-link-http": "^1.5.11",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.19",
     "quasar": "^1.0.0-beta.0"
   },
   "devDependencies": {
